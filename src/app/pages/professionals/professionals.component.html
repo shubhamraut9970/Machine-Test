@@ -1,0 +1,123 @@
+<div class="container">
+    <div class="flex-item-left">
+        <mat-card>
+            <img src="assets/user_img.jpg" id="user_Image">
+            <mat-card-content>
+
+                <mat-card-title>Jone Smith</mat-card-title>
+                <mat-card-title id="card_subtitle">CFA, CIC</mat-card-title>
+                <a>
+                    <span id="card-wrapper">
+                        <img class="crown" src="assets/crown.png">
+                        <span>Premium Member</span>
+                    </span>
+                </a>
+                <div>
+                    <span id="card-wrapper">
+                        <mat-icon id="crown-logo-icon">school</mat-icon>
+                        <span>Insurance Agent, Attorney, Accountant</span>
+                    </span>
+                </div>
+
+                <div style="padding: 15px;">
+                    <mat-divider></mat-divider>
+                </div>
+
+                <div>
+                    <span id="card-wrapper">
+                        <mat-icon id="crown-logo-icon" color="warn">email</mat-icon>
+                        <button mat-button color="warn" class="email_button">Send an Email</button>
+                    </span>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+    
+    <div class="flex-item-right">
+        <mat-card id="mat-title-card" >
+            <mat-card-title id="card_right_title">Business Details</mat-card-title>
+        </mat-card>
+        <mat-card>
+            <div class="card_right">
+                <mat-card-title>
+                    <div style="display: flex;border-bottom: 1px solid #eee;">
+                        <div style="width: 50%;padding: 10px 15px;
+                                   text-align: left;display: flex;">
+                            <span style="margin-right: 15px;    margin-top: 5px;">
+                                <mat-icon class="right_person_icon">person</mat-icon>
+                            </span>
+                            <span style="margin-top: 6px;">
+                                <mat-card-subtitle id="profile_title">Profile</mat-card-subtitle>
+                            </span>
+                        </div>
+
+                        <div style="width: 50%;text-align: end;
+                                   padding: 10px 15px">
+                            <button mat-raised-button color="warn" (click)="openEditModal()">
+                                Edit Profile
+                            </button>
+                        </div>
+                    </div>
+
+                    <mat-card-content *ngFor="let item of user_data">
+                        <div class="div-holder">
+                            <div class="min-div-holder">
+                                <mat-card-content id="mat_card_content">Name :</mat-card-content>
+                            </div>
+                            <div class="min-div-holders">
+                                <mat-card-content id="mat_card_contents">{{item.name}}</mat-card-content>
+                            </div>
+                        </div>
+
+                        <div class="div-holder">
+                            <div class="min-div-holder">
+                                <mat-card-content id="mat_card_content">Domain :</mat-card-content>
+                            </div>
+                            <div class="min-div-holders">
+                                <mat-card-content id="mat_card_contents">{{item.domain}}</mat-card-content>
+                            </div>
+                        </div>
+
+                        <div class="div-holder">
+                            <div class="min-div-holder">
+                                <mat-card-content id="mat_card_content">Gender :</mat-card-content>
+                            </div>
+                            <div class="min-div-holders">
+                                <mat-card-content id="mat_card_contents">{{item.gender}}</mat-card-content>
+                            </div>
+                        </div>
+
+                        <div class="div-holder">
+                            <div class="min-div-holder">
+                                <mat-card-content id="mat_card_content">Date of Birth :</mat-card-content>
+                            </div>
+                            <div class="min-div-holders">
+                                <mat-card-content id="mat_card_contents">{{item.dateofbirth}}</mat-card-content>
+                            </div>
+                        </div>
+
+                        <div class="div-holder">
+                            <div class="min-div-holder">
+                                <mat-card-content id="mat_card_content">Phone Number :</mat-card-content>
+                            </div>
+                            <div class="min-div-holders">
+                                <mat-card-content id="mat_card_contents">{{item.phone_no}}</mat-card-content>
+                            </div>
+                        </div>
+
+                        <div class="div-holder">
+                            <div class="min-div-holder">
+                                <mat-card-content id="mat_card_content">Location :</mat-card-content>
+                            </div>
+                            <div class="min-div-holders">
+                                <mat-card-content id="mat_card_contents">{{item.location}}</mat-card-content>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card-title>
+            </div>
+        </mat-card>
+
+    </div>
+</div>

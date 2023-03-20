@@ -1,1 +1,348 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$MachineTest-primary: mat.define-palette(mat.$indigo-palette);
+$MachineTest-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$MachineTest-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$MachineTest-theme: mat.define-light-theme((color: (primary: $MachineTest-primary,
+        accent: $MachineTest-accent,
+        warn: $MachineTest-warn,
+      )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($MachineTest-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+//////////////////////////////////////////////////////////////////
+//+++++++++++++++  Header Component Css +++++++++++++++++//
+//////////////////////////////////////////////////////////////////
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 16px;
+
+}
+
+.a_tag {
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+.a_tag:hover {
+  color: #e42336 !important;
+}
+
+
+
+.mat-button-wrapper {
+  display: inline-block;
+  min-width: 100px;
+
+}
+
+.project-logo {
+  height: 26px;
+  width: 100%;
+  margin: 10px 5px 3px 0;
+}
+
+.hader-card-wrapper {
+  white-space: nowrap;
+  line-height: 36px;
+}
+
+#home-logo-icon {
+  height: 26px;
+  vertical-align: middle;
+  margin: 3px 10px 3px 0;
+}
+
+.user-logo {
+  height: 37px;
+  margin: 3px 4px 3px 0;
+  border-radius: 50%;
+}
+
+.mail_icon {
+  margin-right: 8px;
+
+}
+
+.search_icon {
+  line-height: 57px;
+  font-size: 30px;
+}
+
+.icon_title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.logo {
+  background: 0 0 !important;
+  padding: 4px 10px 5px 0;
+  left: 80px;
+  width: 200px;
+  max-width: 200px;
+  max-height: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media (max-width: 1075px) {
+
+  #button-wrapper {
+    min-width: 0px !important;
+  }
+}
+
+@media screen and (max-width: 954px) {
+
+  // .mat-toolbar-single-row {
+  //   height: 127px !important;
+  // }
+  .icon_title {
+    font-size: 13px !important;
+  }
+}
+
+@media screen and (max-width: 939px) {
+
+  .a_tag {
+    padding: 0 10px !important;
+  }
+}
+
+@media screen and (max-width: 831px) {
+
+  //  .icon_title {
+  //  display: none !important;
+  // }
+  .mat-toolbar-single-row {
+    height: 110px !important;
+  }
+}
+
+@media screen and (max-width: 605px) {
+
+  .project-logo {
+    height: 20px !important;
+    width: 80% !important;
+  }
+
+  .mat-button-wrapper {
+    width: 90% !important;
+  }
+
+  #a_responsive {
+    padding: 0px 5px !important;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+  .icon_title {
+    display: none !important;
+  }
+
+}
+
+
+//////////////////////////////////////////////////////////////////
+//+++++++++++++++  Professionals Component Css +++++++++++++++++//
+//////////////////////////////////////////////////////////////////
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 0% 6%;
+}
+
+.flex-item-left {
+  padding: 10px;
+  flex: 3%;
+}
+
+.flex-item-right {
+  padding: 10px;
+  flex: 50%;
+}
+
+/* Responsive layout */
+@media (max-width: 870px) {
+  .container {
+    flex-direction: column;
+  }
+
+  #user_Image {
+    width: 30% !important;
+  }
+}
+
+#user_Image {
+  margin-top: 0px;
+  width: 50%;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.mat-card-title {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#mat-title-card {
+  background: #e7eacd;
+}
+
+
+#card_right_title {
+  text-align: left;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.card_right {
+  border: 1px solid #eee;
+}
+
+.right_person_icon {
+  color: #cfd4a6;
+}
+
+#mat_card_content {
+  margin-bottom: 0px;
+}
+
+#mat_card_contents {
+  margin-bottom: 0px;
+  color: #777777;
+}
+
+#profile_title {
+  font-size: 17px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 0px;
+}
+
+#card_subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #a4a4a4;
+  margin-top: 10px;
+}
+
+#card-wrapper {
+  white-space: nowrap;
+  line-height: 36px;
+
+}
+
+#crown-logo-icon {
+  height: 26px;
+  vertical-align: middle;
+  margin: 0 10px 3px 0;
+}
+
+.crown {
+  height: 15px;
+  vertical-align: middle;
+  margin: 0 10px 3px 0;
+}
+
+.email_button {
+  padding: 0;
+}
+
+
+.div-holder {
+  display: flex;
+  padding: 10px 20px;
+}
+
+.min-div-holder {
+  text-align: justify;
+  width: 30%;
+}
+
+.min-div-holders {
+  text-align: justify;
+  width: 70%;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 15px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+
+
+
+@media screen and (max-width: 400px) {
+  #button-responsive  {
+    width: 120px !important;
+  }
+}
+
+
+@media screen and (max-width: 375px) {
+  #button-responsive  {
+    width: 100px !important;
+  }
+}
+
+#btn-wrap{
+  min-width: 80px !important;
+}
+
+
+// @media screen and (max-width: 1085px) {
+//   #button-responsive  {
+//     width: 120px !important;
+//   }
+// }
+
+.mat-raised-button.mat-warn{
+  background-color: #c82028;
+}
+
+.mat-icon.mat-warn {
+  color:#c82028;
+}
+.mat-button.mat-warn{
+  color:#c82028;
+}

@@ -1,0 +1,44 @@
+
+<mat-dialog-content>
+    <header><h1>Edit Profile</h1></header>
+    <form [formGroup]="editform">
+    <p>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Name" formControlName="name">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Domain" formControlName="domain">
+        </mat-form-field>
+    </p>
+    
+    <p>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Date of Birth" formControlName="dateofbirth">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Phone Number" formControlName="phone_no">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Location" formControlName="location">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-radio-group aria-label="Select an option" >
+            <mat-radio-button value="male" checked >Male</mat-radio-button>
+            <mat-radio-button value="female" >Female</mat-radio-button>
+          </mat-radio-group>
+    </p>
+</form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button color="warn" id="button-responsive" matDialogClose>Cancel</button>
+    <button mat-raised-button color="primary"  id="button-responsive" >Save</button>
+</mat-dialog-actions>
+
